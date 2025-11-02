@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\DTO\issues\ClassifierDto;
 use App\Http\Requests\NearOrganisationsRequest;
 use App\Http\Resources\BuildingResource;
 use App\Http\Resources\OrganizationResource;
@@ -211,9 +210,6 @@ class OrganizationController extends Controller
         return OrganizationResource::make($organization);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
         $organization = Organization::findOrFail($id);
@@ -226,9 +222,6 @@ class OrganizationController extends Controller
         return OrganizationResource::make($organization);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
         $organization = Organization::findOrFail($id);
